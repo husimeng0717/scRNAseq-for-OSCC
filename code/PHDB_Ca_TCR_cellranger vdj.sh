@@ -1,0 +1,1 @@
+/Bailab7/PROJECT/husimeng/cellranger/cellranger-4.0.0/cellranger vdj --id=PHDB_Ca_vdjOut --fastqs=/Bailab7/PROJECT/husimeng/OSCC/PHDB/PHDB_Ca_TCR --reference=/Bailab7/PROJECT/husimeng/refdata/refdata-cellranger-vdj-GRCh38-alts-ensembl-4.0.0 --sample=PHDB_Ca_TCR --localcores=8 --localmem=64
