@@ -10,7 +10,7 @@ library(BiocParallel)
 library(pheatmap)
 library(scales)
 
-setwd("E:/OSCC/integrate/3_5/FastMNN/OSCC")
+setwd("../OSCC")
 
 cell_type_cols <- c(brewer.pal(9, "Set1"),
                     "#FF34B3","#CD5C5C","#BC8F8F","#20B2AA","#ADFF2F","#FFA500","#FF6A6A","#7FFFD4",
@@ -28,71 +28,72 @@ barcoder <- function(data10x, trim="\\-(.*)",sample){
 }
 
 #########     3' data     #############
-ChSF.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/ChSF/Ca/filtered_feature_bc_matrix/")
+ChSF.Ca <- Read10X(data.dir = "../3/ChSF/Ca/filtered_feature_bc_matrix/")
 ChSF.Ca <- barcoder(ChSF.Ca,sample="ChSF.Ca")
-ChSF.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/ChSF/N/filtered_feature_bc_matrix/")
+ChSF.N <- Read10X(data.dir = "../3/ChSF/N/filtered_feature_bc_matrix/")
 ChSF.N <- barcoder(ChSF.N,sample="ChSF.N")
 
-CZC.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/CZC/Ca/filtered_feature_bc_matrix/")
+CZC.Ca <- Read10X(data.dir = "../3/CZC/Ca/filtered_feature_bc_matrix/")
 CZC.Ca <- barcoder(CZC.Ca,sample="CZC.Ca")
-CZC.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/CZC/N/filtered_feature_bc_matrix/")
+CZC.N <- Read10X(data.dir = "../3/CZC/N/filtered_feature_bc_matrix/")
 CZC.N <- barcoder(CZC.N,sample="CZC.N")
 
-CZX.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/CZX/Ca/filtered_feature_bc_matrix/")
+CZX.Ca <- Read10X(data.dir = "../3/CZX/Ca/filtered_feature_bc_matrix/")
 CZX.Ca <- barcoder(CZX.Ca,sample="CZX.Ca")
-CZX.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/CZX/N/filtered_feature_bc_matrix/")
+CZX.N <- Read10X(data.dir = "../3/CZX/N/filtered_feature_bc_matrix/")
 CZX.N <- barcoder(CZX.N,sample="CZX.N")
 
-HNH.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/HNH/Ca/filtered_feature_bc_matrix/")
+HNH.Ca <- Read10X(data.dir = "../3/HNH/Ca/filtered_feature_bc_matrix/")
 HNH.Ca <- barcoder(HNH.Ca,sample="HNH.Ca")
-HNH.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/HNH/N/filtered_feature_bc_matrix/")
+HNH.N <- Read10X(data.dir = "../3/HNH/N/filtered_feature_bc_matrix/")
 HNH.N <- barcoder(HNH.N,sample="HNH.N")
 
-LiYX.OLK <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/LiYX/OLK/filtered_feature_bc_matrix/")
+LiYX.OLK <- Read10X(data.dir = "../3/LiYX/OLK/filtered_feature_bc_matrix/")
 LiYX.OLK <- barcoder(LiYX.OLK,sample="LiYX.OLK")
 
-PShY.GCa <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/PShY/GCa/filtered_feature_bc_matrix/")
+PShY.GCa <- Read10X(data.dir = "../3/PShY/GCa/filtered_feature_bc_matrix/")
 PShY.GCa <- barcoder(PShY.GCa,sample="PShY.GCa")
-PShY.GN <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/PShY/GN/filtered_feature_bc_matrix/")
+PShY.GN <- Read10X(data.dir = "../3/PShY/GN/filtered_feature_bc_matrix/")
 PShY.GN <- barcoder(PShY.GN,sample="PShY.GN")
 
-WBSh.GCa <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/WBSh/GCa/filtered_feature_bc_matrix/")
+WBSh.GCa <- Read10X(data.dir = "../3/WBSh/GCa/filtered_feature_bc_matrix/")
 WBSh.GCa <- barcoder(WBSh.GCa,sample="WBSh.GCa")
 
-LJH.BCa <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/LJH/BCa/filtered_feature_bc_matrix/")
+LJH.BCa <- Read10X(data.dir = "../3/LJH/BCa/filtered_feature_bc_matrix/")
 LJH.BCa <- barcoder(LJH.BCa,sample="LJH.BCa")
 
-ZhRF.OLK <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/3/ZhRF/OLK/filtered_feature_bc_matrix/")
+ZhRF.OLK <- Read10X(data.dir = "../3/ZhRF/OLK/filtered_feature_bc_matrix/")
 ZhRF.OLK <- barcoder(ZhRF.OLK,sample="ZhRF.OLK")
 
 #########     5'      #############
-ChZhX.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/ChZhX/N/5GEX/filtered_feature_bc_matrix/")
+ChZhX.N <- Read10X(data.dir = "../5/ChZhX/N/5GEX/filtered_feature_bc_matrix/")
 ChZhX.N <- barcoder(ChZhX.N,sample="ChZhX.N")
 
-HKJ.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/HKJ/Ca/5GEX/filtered_feature_bc_matrix/")
+HKJ.Ca <- Read10X(data.dir = "../5/HKJ/Ca/5GEX/filtered_feature_bc_matrix/")
 HKJ.Ca <- barcoder(HKJ.Ca,sample="HKJ.Ca")
-HKJ.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/HKJ/N/5GEX/filtered_feature_bc_matrix/")
+HKJ.N <- Read10X(data.dir = "../5/HKJ/N/5GEX/filtered_feature_bc_matrix/")
 HKJ.N <- barcoder(HKJ.N,sample="HKJ.N")
 
-LWH.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/LWH/Ca/5GEX/filtered_feature_bc_matrix/")
+LWH.Ca <- Read10X(data.dir = "../5/LWH/Ca/5GEX/filtered_feature_bc_matrix/")
 LWH.Ca <- barcoder(LWH.Ca,sample="LWH.Ca")
-LWH.N <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/LWH/N/5GEX/filtered_feature_bc_matrix/")
+LWH.N <- Read10X(data.dir = "../5/LWH/N/5GEX/filtered_feature_bc_matrix/")
 LWH.N <- barcoder(LWH.N,sample="LWH.N")
 
-LYX.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/LYX/Ca/5GEX/filtered_feature_bc_matrix/")
+LYX.Ca <- Read10X(data.dir = "../5/LYX/Ca/5GEX/filtered_feature_bc_matrix/")
 LYX.Ca <- barcoder(LYX.Ca,sample="LYX.Ca")
 
-PHD.BCa <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/PHD/BCa/5GEX/filtered_feature_bc_matrix/")
+PHD.BCa <- Read10X(data.dir = "../5/PHD/BCa/5GEX/filtered_feature_bc_matrix/")
 PHD.BCa <- barcoder(PHD.BCa,sample="PHD.BCa")
 
-WRH.GCa <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/WRH/GCa/5GEX/filtered_feature_bc_matrix/")
+WRH.GCa <- Read10X(data.dir = "../5/WRH/GCa/5GEX/filtered_feature_bc_matrix/")
 WRH.GCa <- barcoder(WRH.GCa,sample="WRH.GCa")
 
-XZB.OLK <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/XZB/OLK/5GEX/filtered_feature_bc_matrix/")
+XZB.OLK <- Read10X(data.dir = "../5/XZB/OLK/5GEX/filtered_feature_bc_matrix/")
 XZB.OLK <- barcoder(XZB.OLK,sample="XZB.OLK")
 
-ZhChH.Ca <- Read10X(data.dir = "E:/OSCC/cellranger-4_0_0 result/5/ZhChH/Ca/5GEX/filtered_feature_bc_matrix/")
+ZhChH.Ca <- Read10X(data.dir = "../5/ZhChH/Ca/5GEX/filtered_feature_bc_matrix/")
 ZhChH.Ca <- barcoder(ZhChH.Ca,sample="ZhChH.Ca")
+
 
 #########     3'+5' meta data     #############
 meta.data<-data.frame(barcode = c(colnames(ChSF.Ca),colnames(ChSF.N),colnames(CZC.Ca),colnames(CZC.N),
@@ -150,11 +151,10 @@ load("E:/OSCC/cellranger-4_0_0 result/3_5_meta.data.Rda")
 
 ##########   Initialize Seurat Object   ##########
 OSCC.data<-cbind(ChSF.Ca, ChSF.N, CZC.Ca, CZC.N, CZX.Ca, CZX.N, HNH.Ca, HNH.N, LiYX.OLK, PShY.GCa, PShY.GN, WBSh.GCa, LJH.BCa,ZhRF.OLK,
-                 
+             
                  ChZhX.N, HKJ.Ca, HKJ.N, LWH.Ca, LWH.N, LYX.Ca, PHD.BCa, WRH.GCa, XZB.OLK, ZhChH.Ca)
 
-save(OSCC.data,file = "E:/OSCC/cellranger-4_0_0 result/3_5_data.Rda")
-load("E:/OSCC/cellranger-4_0_0 result/3_5_data.Rda")
+
 
 OSCC <- CreateSeuratObject(counts = OSCC.data, project = "OSCC", meta.data = meta.data, min.cells = round(0.001*ncol(OSCC.data)))#round(0.001*ncol(OSCC.data))=153 
 
