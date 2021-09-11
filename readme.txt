@@ -1,5 +1,4 @@
-The code used in "Single-cell RNA sequencing reveals that TDO2+ myofibroblasts mediate immune suppression in oral squamous cell carcinoma
-" is available from the folder code.
+The code used in "Single-cell RNA sequencing reveals that TDO2+ myofibroblasts mediate immune suppression in oral squamous cell carcinoma" is available from the folder code.
 
 Raw 10x Genomics sequencing data were processed using the CellRanger software v. 4.0.0, and the 10x human transcriptome GRCh38-2020-A was used as the reference.
 
